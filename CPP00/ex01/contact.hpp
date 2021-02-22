@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 17:02:09 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 18:47:59 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 19:43:47 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ public:
     std::string     getDarkestsecret(void);
 };
 
-void	preview_info(Contact *phonebook, int idx);
+void				preview_info(Contact *phonebook, int idx);
+void				search_contact(Contact phonebook[], int n);
+std::string			trunc_str(std::string str);
 
 #endif
 

@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 17:03:44 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 19:05:06 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 19:40:00 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,48 @@ void	Contact::inputInfo(int idx){
 	_idx = idx;
 	std::cout << "firstname : ";
 	std::getline(std::cin, _firstname);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "lastname : ";
 	std::getline(std::cin, _lastname);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "nickname : ";
 	std::getline(std::cin, _nickname);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "login : ";
 	std::getline(std::cin, _login);
+	if (std::cin.eof())
+		exit(1);	
 	std::cout << "postaladdress : ";
 	std::getline(std::cin, _postaladdress);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "emailaddress : ";
 	std::getline(std::cin, _emailaddress);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "phonenumber : ";
 	std::getline(std::cin, _phonenumber);
+	if (std::cin.eof())
+		exit(1);
+	std::cout << "birthdaydate: ";
+	std::getline(std::cin, _birthdaydate);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "favoritemeal : ";
 	std::getline(std::cin, _favoritemeal);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "underwearcolor : ";
 	std::getline(std::cin, _underwearcolor);
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "darkestsecret : ";
 	std::getline(std::cin, _darkestsecret);
+	if (std::cin.eof())
+		exit(1);
 }
 
 std::string	Contact::getFirstname(void)

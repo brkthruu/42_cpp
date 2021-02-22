@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 17:04:35 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 19:03:29 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 19:35:49 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main(void)
 	{
 		std::cout << "Enter the command" << '\n';
 		std::getline(std::cin, choice, '\n');
+		if (std::cin.eof())
+			return (-1);
 		if (choice == "EXIT")
 			break;
 		else if (choice == "ADD")
@@ -44,9 +46,8 @@ int main(void)
 		}
 		else
 			std::cout << "=> INVALID OPTION" << '\n';
-			
-	}
-	std::cin.clear();
 
+		std::cin.clear();
+	}
 	return (0);
 }
