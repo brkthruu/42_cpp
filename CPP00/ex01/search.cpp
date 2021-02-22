@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 18:43:52 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 19:42:53 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 19:48:07 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void			search_contact(Contact phonebook[], int n)
 	std::cin >> idx;
 	if (std::cin.eof())
 		exit(1);
-	if (idx >= 0 && idx < n)
+	if (std::cin.good() && idx >= 0 && idx < n)
 	{
 		std::cout << phonebook[idx].getFirstname() << '\n';
 		std::cout << phonebook[idx].getLastname() << '\n';
