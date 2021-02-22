@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 17:04:35 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 18:19:39 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 19:03:29 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,20 @@ int main(void)
 		else if (choice == "ADD")
 		{
 			if (idx < MAX_IDX)
-				phonebook[idx++].input_info();	
+			{
+				phonebook[idx].inputInfo(idx);	
+				idx++;
+			}
 			else
 				std::cout << "=> PHONEBOOK IS FULL!!" << '\n';
 		}
-		// else if (choice == "SEARCH")
+		else if (choice == "SEARCH")
+		{
+			if (idx > 0)
+				preview_info(phonebook, idx);
+			else
+				std::cout << "[ERROR] No contact exists" << '\n';
+		}
 		else
 			std::cout << "=> INVALID OPTION" << '\n';
 			
