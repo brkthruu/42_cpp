@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 17:02:09 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 17:36:57 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 18:10:40 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# define MAX_SIZE 8
+# define MAX_IDX 8
 
 class Contact
 {
@@ -25,7 +25,7 @@ private:
 	std::string	_nickname;
 	std::string	_login;
 	std::string	_postaladdress;
-	std::string	_emailadress;
+	std::string	_emailaddress;
     std::string	_phonenumber;
     std::string	_birthdaydate;
     std::string	_favoritemeal;
@@ -35,7 +35,9 @@ private:
 public:
 	Contact(void);
 	~Contact(void);
-	/* 연락처 추가 */
+	
+	void	input_info(void);
+	
 	/* 간단 버전 연락처 출력 */
 	void	show_contact(void)
 	{
