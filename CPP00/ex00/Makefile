@@ -1,14 +1,15 @@
 CC = clang++
+VERSION = -std=c++98
 NAME = megaphone
 FLAGS = -Wall -Wextra -Werror
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) $(VERSION) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) $(VERSION) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
