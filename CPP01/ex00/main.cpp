@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 14:08:35 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/24 14:44:27 by hjung            ###   ########.fr       */
+/*   Created: 2021/02/24 16:29:07 by hjung             #+#    #+#             */
+/*   Updated: 2021/02/24 21:02:40 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Pony.hpp"
 
-char 	ft_toupper(char c)
+void	ponyOnTheHeap(const char *str)
 {
-	return ((c >= 'a' && c <= 'z') ? c - ('a' - 'A') : c);
+	Pony *pony = new Pony(str);
+	delete pony;
 }
 
-int 	main(int argc, char *argv[])
+void	ponyOnTheStack(const char *str)
 {
-	int i;
-	int j;
+	Pony pony(str);
+}
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+int main(void)
+{
+	std::cout << "----- ponyOnTheHeap -----" << '\n';
+	ponyOnTheHeap("ponyAAA");
+	ponyOnTheHeap("ponyBBB");
 
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			std::cout << ft_toupper(argv[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std::cout << '\n';
+	std::cout << "----- ponyOnTheStack -----" << '\n';
+	ponyOnTheHeap("ponyCCC");
+	ponyOnTheHeap("ponyDDD");
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 17:04:35 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/22 19:35:49 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/24 16:28:45 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 	idx = 0;
 	while (1)
 	{
-		std::cout << "Enter the command" << '\n';
+		std::cout << "Enter the command (ADD | SEARCH | EXIT)" << '\n';
 		std::getline(std::cin, choice, '\n');
 		if (std::cin.eof())
 			return (-1);

@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 14:08:35 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/24 14:44:27 by hjung            ###   ########.fr       */
+/*   Created: 2021/02/24 16:30:07 by hjung             #+#    #+#             */
+/*   Updated: 2021/02/24 17:45:40 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PONY_HPP
+# define PONY_HPP
+
 #include <iostream>
+#include <string>
 
-char 	ft_toupper(char c)
+class Pony
 {
-	return ((c >= 'a' && c <= 'z') ? c - ('a' - 'A') : c);
-}
+private:
+	std::string	_name;
+	
+public:
+	Pony(std::string name);
+	~Pony(void);
+};
 
-int 	main(int argc, char *argv[])
-{
-	int i;
-	int j;
-
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			std::cout << ft_toupper(argv[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std::cout << '\n';
-	return (0);
-}
+#endif
