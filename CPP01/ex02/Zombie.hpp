@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 00:38:27 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/25 13:09:14 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/25 13:45:56 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include <string>
 # include <cstdlib>
-# include <time.h>
+# include <ctime>
 
 class Zombie
 {

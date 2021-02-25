@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 02:10:28 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/25 13:09:43 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/25 13:39:31 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 	return( new Zombie(name, _type) );
 }
 
-void	ZombieEvent::randomChump(void)
+Zombie	*ZombieEvent::randomChump(void)
 {
 	Zombie *zombie;
 	std::string n[] = {"kycho", "jakang", "jinbkim", "seobaek", "yapark"};
@@ -40,5 +40,5 @@ void	ZombieEvent::randomChump(void)
 	srand(clock());
 	zombie = this->newZombie(n[rand() % 5]);
 	zombie->announce();
-	delete (zombie);
+	return (zombie);
 }

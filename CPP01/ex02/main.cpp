@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 01:54:36 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/25 13:02:10 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/25 13:44:21 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int main(void)
 
 	ZombieEvent	ze2;
 	ze2.setZombieType("VILLAIN");
-	ze2.randomChump();
+	Zombie	*zombie5 = ze2.randomChump();
+	delete(zombie5);
 	
 	return (0);
 }
