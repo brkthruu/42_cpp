@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 16:30:07 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/24 22:17:40 by hjung            ###   ########.fr       */
+/*   Created: 2021/02/25 00:36:50 by hjung             #+#    #+#             */
+/*   Updated: 2021/02/25 02:07:13 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-
-class Pony
+Zombie::Zombie()
 {
-private:
-	std::string	_name;
-	
-public:
-	Pony(std::string name);
-	~Pony(void);
-};
+	_name = "no name";
+	_type = "no type";
+}
 
-#endif
+Zombie::~Zombie()
+{
+	return ;
+}
+
+Zombie::Zombie(std::string name, std::string type)
+{
+	this->_name = name;
+    this->_type = type;
+}
+
+void	Zombie::announce(void)
+{
+	std::string     str;
+
+	str = "<" + _name + " (" + _type + ")> ";
+	std::cout << str << "Braiiiiiiinnnssss..." << '\n';
+}
