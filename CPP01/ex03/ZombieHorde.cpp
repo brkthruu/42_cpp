@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 04:41:23 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/26 05:22:10 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/27 19:54:19 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ ZombieHorde::ZombieHorde(const int N): _N(N)
 	while (i < N)
 	{
 		name = randomChump();
+		usleep(10);
 		_zombie[i] = Zombie(name, "DefaultType");
 		i++;
 	}

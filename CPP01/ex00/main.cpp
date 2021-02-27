@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 16:29:07 by hjung             #+#    #+#             */
-/*   Updated: 2021/02/24 21:02:40 by hjung            ###   ########.fr       */
+/*   Updated: 2021/02/27 19:53:10 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main(void)
 	ponyOnTheHeap("ponyBBB");
 
 	std::cout << "----- ponyOnTheStack -----" << '\n';
-	ponyOnTheHeap("ponyCCC");
-	ponyOnTheHeap("ponyDDD");
+	ponyOnTheStack("ponyCCC");
+	ponyOnTheStack("ponyDDD");
 
 	return (0);
 }
