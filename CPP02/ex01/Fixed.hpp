@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hjung <hjung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:40:30 by hjung             #+#    #+#             */
-/*   Updated: 2021/03/02 13:40:30 by hjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 13:49:41 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
 
 class Fixed
 {
