@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hjung <hjung@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:40:30 by hjung             #+#    #+#             */
-/*   Updated: 2021/03/02 13:49:41 by hjung            ###   ########.fr       */
+/*   Updated: 2021/03/03 05:26:33 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ class Fixed
 
 };
 
-std::ostream	&operator<<( std::ostream &o, Fixed const &i );
+std::ostream	&operator<<( std::ostream &out, Fixed const &ref );
 
 #endif /* *********************************************************** FIXED_H */
