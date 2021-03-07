@@ -1,45 +1,47 @@
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-std::string FragTrap::attack[FragTrap::nbrWeapons] = {
-	"bare hand",
-	"wooden stick",
-	"arrow",
-	"pistol",
-	"hellfire"
+std::string ScavTrap::questions[ScavTrap::nbrChallenges] = {
+	"What is the capital of Korea?",
+	"What is another word for Fourth of July?",
+	"Some months have 31 days, but how many have 28?",
+	"What does 'IP' stand for in IP address?",
+	"Name five vegetables in English."
 };
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap()
+ScavTrap::ScavTrap()
 {
 	this->name = "Anonymous";
 	this->level = 1;
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
-	this->energyPoints = 100;
-	this->maxEnergyPoints = 100;
-	this->meleeAttackDamage = 30;
-	this->rangedAttackDamage = 20;
-	this->armorDamageReduction = 5;
+	this->energyPoints = 50;
+	this->maxEnergyPoints = 50;
+	this->meleeAttackDamage = 20;
+	this->rangedAttackDamage = 15;
+	this->armorDamageReduction = 3;
 }
 
-FragTrap::FragTrap(std::string const name): name(name)
+ScavTrap::ScavTrap(std::string const name): name(name)
 {
-	std::cout << "FR4G-TP " << this->name << " generated!" << std::endl;
+	std::cout << this->name << ": Locking the door." << std::endl;
 	this->level = 1;
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
-	this->energyPoints = 100;
-	this->maxEnergyPoints = 100;
-	this->meleeAttackDamage = 30;
-	this->rangedAttackDamage = 20;
-	this->armorDamageReduction = 5;
+	this->energyPoints = 50;
+	this->maxEnergyPoints = 50;
+	this->meleeAttackDamage = 20;
+	this->rangedAttackDamage = 15;
+	this->armorDamageReduction = 3;
 }
 
-FragTrap::FragTrap( const FragTrap &ref ): name(ref.name)
+ScavTrap::ScavTrap( const ScavTrap &ref )
 {
+	std::cout << this->name << ": Locking the door." << std::endl;
+	this->name = ref.name;
 	this->level = ref.level;
 	this->hitPoints = ref.hitPoints;
 	this->maxHitPoints = ref.maxHitPoints;
@@ -48,57 +50,57 @@ FragTrap::FragTrap( const FragTrap &ref ): name(ref.name)
 	this->meleeAttackDamage = ref.meleeAttackDamage;
 	this->rangedAttackDamage = ref.rangedAttackDamage;
 	this->armorDamageReduction = ref.armorDamageReduction;
-	std::cout << "FR4G-TP " << this->name << " generated!" << std::endl;
 }
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
-	std::cout <<  "FR4G-TP " << this->name << " destroyed!" << std::endl;
+	std::cout << this->name << ": Door breached."  << std::endl;
 }
 
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
-FragTrap& FragTrap::operator=(FragTrap const &ref)
+
+ScavTrap &				ScavTrap::operator=( ScavTrap const &ref )
 {
-	name = ref.name;
-    hitPoints = ref.hitPoints;
-    maxHitPoints = ref.maxHitPoints;
-    energyPoints = ref.energyPoints;
-    maxEnergyPoints = ref.maxEnergyPoints;
-    level = ref.level;
-    meleeAttackDamage = ref.meleeAttackDamage;
-    rangedAttackDamage = ref.rangedAttackDamage;
-    armorDamageReduction = ref.armorDamageReduction;
-    return (*this);
+	this->name = ref.name;
+	this->level = ref.level;
+	this->hitPoints = ref.hitPoints;
+	this->maxHitPoints = ref.maxHitPoints;
+	this->energyPoints = ref.energyPoints;
+	this->maxEnergyPoints = ref.maxEnergyPoints;
+	this->meleeAttackDamage = ref.meleeAttackDamage;
+	this->rangedAttackDamage = ref.rangedAttackDamage;
+	this->armorDamageReduction = ref.armorDamageReduction;
+	return *this;
 }
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
-unsigned int	FragTrap::rangedAttack(std::string const &target)
+unsigned int	ScavTrap::rangedAttack(std::string const &target)
 {
-	std::cout << this->name << " atacks "
-				<< target << " at range, causing "
+	std::cout << this->name << " === ranged attack ===> "
+				<< target << " , causing "
 				<< this->rangedAttackDamage << " points of damage!\n\n";
 	return (this->rangedAttackDamage);
 }
 
-unsigned int    FragTrap::meleeAttack(std::string const &target)
+unsigned int	ScavTrap::meleeAttack(std::string const &target)
 {
-    std::cout<< this-> name << " attacks "
-				<< target <<" at melee, causing " 
+	std::cout<< this-> name << " === melee attack ===> "
+				<< target <<" , causing " 
 				<< this->meleeAttackDamage <<" points of damage!\n\n";
     return (this->meleeAttackDamage);
 }
 
-void	FragTrap::takeDamage(unsigned int amount)
+void	ScavTrap::takeDamage(unsigned int amount)
 {
 	if (this->hitPoints == 0)
 	{
@@ -120,7 +122,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 	std::cout<< '\n';
 }
 
-void    FragTrap::beRepaired(unsigned int amount)
+void	ScavTrap::beRepaired(unsigned int amount)
 {
 	this->hitPoints += amount;
 	this->energyPoints += amount;
@@ -138,22 +140,19 @@ void    FragTrap::beRepaired(unsigned int amount)
 	std::cout<< '\n';
 }
 
-unsigned int	FragTrap::vaulthunter_dot_exe(std::string const &target)
+void	ScavTrap::challengeNewcomer(void)
 {
 	srand(clock());
 
-	if (energyPoints < 25)
-	{
-        std::cout<< this->name << " has not enough energy for this skill!\n\n";
-        return (0);
-	}
-	energyPoints -= 25;
-	int		damage[] = {10, 20, 30, 40, 100};
 	int		idx;
 	idx = rand()%5;
-	std::cout<< this->name << " attacks " << target << " with "<< this->attack[idx] 
-	<< " causing "<< damage[idx] << " points of damage!\n";
-	return (damage[idx]);
+	std::cout << this->name << ": ";
+	std::cout << ScavTrap::questions[rand() % ScavTrap::nbrChallenges] << std::endl;
 }
+
+/*
+** --------------------------------- ACCESSOR ---------------------------------
+*/
+
 
 /* ************************************************************************** */
