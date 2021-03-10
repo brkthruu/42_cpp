@@ -6,7 +6,7 @@
 /*   By: hjung <hjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:40:20 by hjung             #+#    #+#             */
-/*   Updated: 2021/03/07 23:33:26 by hjung            ###   ########.fr       */
+/*   Updated: 2021/03/10 14:31:18 by hjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	bob.takeDamage(amy.meleeAttack("Bob"));
 	bob.beRepaired(5);
 	bob.beRepaired(50);
-	std::cout << "--------random attact--------\n";
+	std::cout << "--------random attack--------\n";
 	amy.takeDamage(bob.vaulthunter_dot_exe("Amy"));
 	amy.takeDamage(bob.vaulthunter_dot_exe("Amy"));
 	amy.takeDamage(bob.vaulthunter_dot_exe("Amy"));
