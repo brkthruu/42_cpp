@@ -46,12 +46,9 @@ SuperTrap::~SuperTrap()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-SuperTrap &				SuperTrap::operator=( SuperTrap const & rhs )
+SuperTrap &				SuperTrap::operator=( SuperTrap const & ref)
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	ClapTrap::operator=(ref);
 	return *this;
 }
 

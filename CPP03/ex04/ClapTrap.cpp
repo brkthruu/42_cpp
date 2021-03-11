@@ -61,6 +61,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &				ClapTrap::operator=( ClapTrap const &ref)
 {
+	this->name = ref.name;
 	this->level = ref.level;
 	this->hitPoints = ref.hitPoints;
 	this->maxHitPoints = ref.maxHitPoints;
