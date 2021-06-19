@@ -48,16 +48,17 @@ int main(void)
     std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     
 
-	std::cout << "\n================" << '\n';
+	std::cout << "\n===== test template function with class object ===========" << '\n';
     Awesome j(20);
     Awesome k(30);
 
     std::cout << "j: " << j.getN() << '\n';
     std::cout << "k: " << k.getN() << '\n';
     swap(j, k);
-    std::cout << "===== swap =====" << '\n';
+    std::cout << "===== after swap =====" << '\n';
     std::cout << "j: " << j.getN() << '\n';
     std::cout << "k: " << k.getN() << '\n';
+
     Awesome minAwesome = ::min(j, k);
     std::cout << "min: " << minAwesome.getN() << '\n';
     Awesome maxAwesome = ::max(j, k);

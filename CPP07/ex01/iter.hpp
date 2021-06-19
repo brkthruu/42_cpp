@@ -19,7 +19,7 @@ std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
     return o;
 }
 
-template< typename T >
+template<typename T>
 void print( T const & x )
 {
     std::cout << x << '\n';
